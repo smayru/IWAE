@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-"""Chainer example: train a VAE on MNIST
-"""
 from __future__ import print_function
 import argparse
 
@@ -76,10 +74,7 @@ class weighted_VAE(chainer.Chain):
             return h2
 
     def get_loss_func(self,x, C=1.0):
-        """Get loss function of VAE.
-        The loss value is equal to ELBO (Evidence Lower Bound)
-        multiplied by -1.
-        """
+
         batchsize = len(self.encode(x)[0])
         z=list()
         mu, ln_var = self.encode(x)
